@@ -26,6 +26,17 @@ const HANDLE_DROP = (e) => {
     const DT = e.dataTransfer;
     const FILES = DT.FILES;
     const FILE_ARRAY = [...FILES];
-    console.log(FILES);
-    console.log(FILE_ARRAY);
+    
+    if (FILE_ARRAY.length > 20) return alert("Too many files!");
+    HANDLE_FILES(FILE_ARRAY);
+}
+
+const HANDLE_FILES = (FILE_ARRAY) => {
+    FILE_ARRAY.forEach(file => {
+        const FILE_ID = // counter
+        // increment
+        if (((file.size / 1024) / 1024) > 4) return alert("File over 4 MB");
+        createResult(file, FILE_ID);
+        uploadFile(file, FILE_ID);
+    })
 }
