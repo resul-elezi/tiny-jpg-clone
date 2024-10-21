@@ -97,8 +97,8 @@ const CREATE_RESULT = (file, fileID) => {
 
 const DISPLAY_RESULTS = () => {
     const RESULTS = document.querySelector('.results');
-    if (results.classList.contains('none')) {
-        results.classList.remove('none');
-        results.classList.add('block');
+    if (RESULTS.classList.contains('none')) {
+        RESULTS.classList.remove('none');
+        RESULTS.classList.add('block');
     }
 }
