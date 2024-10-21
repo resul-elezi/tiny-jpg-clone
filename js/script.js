@@ -17,5 +17,15 @@ const INIT_APP = () => {
         DROP_AREA.addEventListener(evtName, INACTIVE);
     });
 
-    DROP_AREA.addEventListener("drop", handleDrop);
+    DROP_AREA.addEventListener("drop", HANDLE_DROP);
+}
+
+document.addEventListener("DOMContentLoaded", INIT_APP);
+
+const HANDLE_DROP = (e) => {
+    const DT = e.dataTransfer;
+    const FILES = DT.FILES;
+    const FILE_ARRAY = [...FILES];
+    console.log(FILES);
+    console.log(FILE_ARRAY);
 }
