@@ -42,3 +42,54 @@ const HANDLE_FILES = (FILE_ARRAY) => {
         uploadFile(file, FILE_ID);
     })
 }
+
+const CREATE_RESULT = (file, fileID) => {
+    const ORIG_FILE_SIZE_STRING = getFileSizeString(file.size);
+
+    const P1 = document.createElement("p");
+    P1.className = "results__title";
+    P1.textContent = file.name;
+
+    const P2 = document.createElement("p");
+    P2.className = "results__size";
+    P2.textContent = ORIG_FILE_SIZE_STRING;
+
+    const DIV_ONE = document.createElement("div");
+    DIV_ONE.appendChild(P1);
+    DIV_ONE.appendChild(P2);
+
+    const PROGRESS = document.createElement("progress");
+    PROGRESS.id = `progress_${file.name}_${fileID}`;
+    PROGRESS.className = "results__bar";
+    PROGRESS.max = 10;
+    PROGRESS.value = 0;
+
+    const P3 = document.createElement("p");
+    P3.id = `new_size_${file.name}_${fileID}`;
+    P3.className = "results__size";
+
+    const P4 = document.createElement("p");
+    P4.id = `download_${file.name}_${fileID}`;
+    P4.className = "results__download";
+
+    const P5 = document.createElement("p");
+    P5.id = `saved_${file.name}_${fileID}`;
+    P5.className = "results__saved";
+
+    const DIV_DL = document.createElement("div");
+    DIV_DL.className = "divDL";
+    DIV_DL.appendChild(P4);
+    DIV_DL.appendChild(P5);
+
+    const DIV_TWO = document.createElement("div");
+    DIV_TWO.appendChild(P3);
+    DIV_TWO.appendChild(DIV_DL);
+
+    const LI = document.createElement("li");
+    LI.appendChild(DIV_ONE);
+    LI.appendChild(PROGRESS);
+    LI.appendChild(DIV_TWO);
+
+    document.querySelector('.results__list').appendChild(LI);
+    displayResults();
+}
