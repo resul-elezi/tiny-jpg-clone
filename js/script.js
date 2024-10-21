@@ -93,3 +93,12 @@ const CREATE_RESULT = (file, fileID) => {
     document.querySelector('.results-list').appendChild(LI);
     displayResults();
 }
+// Get filesize not included
+
+const DISPLAY_RESULTS = () => {
+    const RESULTS = document.querySelector('.results');
+    if (results.classList.contains('none')) {
+        results.classList.remove('none');
+        results.classList.add('block');
+    }
+}
