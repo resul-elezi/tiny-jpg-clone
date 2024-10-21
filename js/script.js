@@ -47,11 +47,11 @@ const CREATE_RESULT = (file, fileID) => {
     const ORIG_FILE_SIZE_STRING = getFileSizeString(file.size);
 
     const P1 = document.createElement("p");
-    P1.className = "results__title";
+    P1.className = "results-title";
     P1.textContent = file.name;
 
     const P2 = document.createElement("p");
-    P2.className = "results__size";
+    P2.className = "results-size";
     P2.textContent = ORIG_FILE_SIZE_STRING;
 
     const DIV_ONE = document.createElement("div");
@@ -59,22 +59,22 @@ const CREATE_RESULT = (file, fileID) => {
     DIV_ONE.appendChild(P2);
 
     const PROGRESS = document.createElement("progress");
-    PROGRESS.id = `progress_${file.name}_${fileID}`;
-    PROGRESS.className = "results__bar";
+    PROGRESS.id = `progress-${file.name}-${fileID}`;
+    PROGRESS.className = "results-bar";
     PROGRESS.max = 10;
     PROGRESS.value = 0;
 
     const P3 = document.createElement("p");
-    P3.id = `new_size_${file.name}_${fileID}`;
-    P3.className = "results__size";
+    P3.id = `new-size-${file.name}-${fileID}`;
+    P3.className = "results-size";
 
     const P4 = document.createElement("p");
-    P4.id = `download_${file.name}_${fileID}`;
-    P4.className = "results__download";
+    P4.id = `download-${file.name}-${fileID}`;
+    P4.className = "results-download";
 
     const P5 = document.createElement("p");
-    P5.id = `saved_${file.name}_${fileID}`;
-    P5.className = "results__saved";
+    P5.id = `saved-${file.name}-${fileID}`;
+    P5.className = "results-saved";
 
     const DIV_DL = document.createElement("div");
     DIV_DL.className = "divDL";
@@ -90,6 +90,6 @@ const CREATE_RESULT = (file, fileID) => {
     LI.appendChild(PROGRESS);
     LI.appendChild(DIV_TWO);
 
-    document.querySelector('.results__list').appendChild(LI);
+    document.querySelector('.results-list').appendChild(LI);
     displayResults();
 }
